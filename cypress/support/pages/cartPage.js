@@ -5,7 +5,8 @@ class cartPage {
         addToCart:() => cy.get ('#add-to-cart-button'),
         addedToCartFirstItem:() => cy.get ('.a-size-medium-plus'),
         addedToCartDetails:() => cy.get ('#attachDisplayAddBaseAlert > .a-box-inner > .a-alert-heading'),
-        goToCart:() => cy.get ('.nav-cart-count-container'),
+        goToCart:() => cy.get ('.nav-cart-icon'),
+        closePopUp: () => cy.get ('#attach-close_sideSheet-link'),
         deleteItemI:() => cy.get ('#sc-active-C407616fe-78e8-4447-bfb6-bb0a076565b8 > .sc-list-item-content > .a-grid-vertical-align > :nth-child(2) > .sc-action-links > .sc-action-delete > .a-declarative > .a-color-link'),
        deleteItemIII: ()=> cy.get('#sc-active-C113828b3-8001-4fbc-a252-9cbbd144db82 > .sc-list-item-content > .a-grid-vertical-align > :nth-child(2) > .sc-action-links > .sc-action-delete > .a-declarative > .a-color-link')
     }
@@ -34,6 +35,7 @@ cleanCart(){
                 case 'Sec':
                     this.elements.addedToCartDetails()
                     .contains('Added to Cart');
+                    this.elements.closePopUp().click();
                     break;
         
         }
