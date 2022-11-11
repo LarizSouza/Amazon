@@ -28,5 +28,8 @@ describe('AccessAmazon', () => {
         productDetailsPage.swapProductColor();
         
      });
+     afterEach(() => {
+      cy.screenshot();
+     });
 
 });
